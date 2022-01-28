@@ -1,0 +1,30 @@
+<div class="wrapper fadeInDown customImage">
+  <div id="formContent"> 
+    <h2 class="active"> Iniciar sesión </h2>
+    <h2 class="inactive underlineHover">Registrarse </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+    </div>
+ 
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" id="login" class="fadeIn second" formControlName="Username" name="login" placeholder="Correo">
+      <br>
+      <small *ngIf="Username.invalid && Username.touched">
+        Complete el campo
+      </small>
+      <input type="text" id="password" class="fadeIn third" formControlName="Password" name="login" placeholder="Contraseña">
+      <br>
+      <small *ngIf="Password.invalid && Password.touched">
+        Complete el campo
+      </small>
+      <br>
+      <input type="submit" class="fadeIn fourth" value="Iniciar sesión">
+    </form>
+ 
+    <div id="formFooter">
+      <a class="underlineHover" (click)="recoverPassword()">¿Olvido contraseña?</a>
+    </div>
+
+  </div>
+</div>
